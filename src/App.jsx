@@ -16,7 +16,7 @@ function App(){
 
   const onDelete = async (id) =>{
     try{
-      fetch(`{API_URL}/appointments/${id}`, {method: "DELETE"})
+      fetch(`${API_URL}/appointments/${id}`, {method: "DELETE"})
       setAppointments(appointments.filter(each => each._id !== id))
     } catch(e){
       console.log(`Failed to delete: ${e.message}`)
