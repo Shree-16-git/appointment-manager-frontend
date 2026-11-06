@@ -1,20 +1,22 @@
 import {useState, useEffect} from 'react'
 import './App.css'
 
+const API_URL = import.meta.env.VITE_API_URL
+
 function App(){
   const [appointments, setAppointments] = useState([]);
   const [title, setTitle] = useState()
   const [date, setDate] = useState()
 
   useEffect(() => {
-    fetch("http://localhost:5000/appointments")
+    fetch(`${API_URL}/appointments`)
       .then((res) => res.json())
       .then((data) => setAppointments(data));
   }, [])
 
   const onDelete = async (id) =>{
     try{
-      fetch(`http://localhost:5000/appointments/${id}`, {method: "DELETE"})
+      fetch(`{API_URL}/appointments/${id}`, {method: "DELETE"})
       setAppointments(appointments.filter(each => each._id !== id))
     } catch(e){
       console.log(`Failed to delete: ${e.message}`)
@@ -37,7 +39,7 @@ function App(){
     }
 
     try{
-      const res = await fetch("http://localhost:5000/appointments", options)
+      const res = await fetch(`${API_URL}/appointments`, options)
       const newAppointment = await res.json()
       setAppointments([...appointments, newAppointment])
       setTitle("")
