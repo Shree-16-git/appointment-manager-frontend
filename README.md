@@ -1,16 +1,21 @@
-# React + Vite
+# Appointment Manager (Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React app to add, view and delete appointments.
 
-Currently, two official plugins are available:
+**Live demo:** https://appointment-manager-frontend-gamma.vercel.app/
+**Backend repo:** [appointment-manager-backend>](https://github.com/Shree-16-git/appointment-manager-backend)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech
+React (hooks), Vite, CSS, Fetch API
 
-## React Compiler
+## Features
+- List appointments from the API
+- Add an appointment with a form
+- Delete an appointment
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Run locally
+1. `npm install`
+2. Create `.env` with `VITE_API_URL=http://localhost:5000`
+3. `npm run dev`
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+> Note: the backend runs on Render's free tier, so the first request can take 30-60 seconds to wake up.
